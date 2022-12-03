@@ -14,7 +14,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-const PORT = 4001;
+const PORT = 4002;
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
 });
