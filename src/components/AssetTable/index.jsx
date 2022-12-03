@@ -3,11 +3,11 @@ const { View } = require("@react-pdf/renderer");
 const { InvoiceTableHeader } = require("./tableHeader");
 const { InvoiceTableRow } = require("./tableRow");
 
-function AssetTable({ data }) {
+function AssetTable(props) {
   return (
     <View>
       <InvoiceTableHeader />
-      <InvoiceTableRow rowData={data} />
+      <InvoiceTableRow rowData={props.data} />
     </View>
   );
 }

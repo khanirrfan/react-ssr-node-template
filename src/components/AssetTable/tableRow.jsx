@@ -1,9 +1,7 @@
 const React = require("react");
 const { Text, View, StyleSheet } = require("@react-pdf/renderer");
-const { useEffect, useState } = require("react");
-const { default: axios } = require("axios");
+const { useEffect, useState, useMemo } = require("react");
 
-const borderColor = "#90e5fc";
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
@@ -15,58 +13,50 @@ const styles = StyleSheet.create({
   },
   planName: {
     width: "14%",
-
     fontSize: 8,
   },
   grantInfo: {
     width: "12%",
-
     fontSize: 8,
   },
   optionGranted: {
     width: "14%",
-
     fontSize: 8,
   },
   netvested: {
     width: "12%",
-
     fontSize: 8,
   },
   unvested: {
     width: "12%",
-
     fontSize: 8,
   },
   cashedout: {
     width: "12%",
-
     fontSize: 8,
   },
   exercised: {
     width: "12%",
-
     fontSize: 8,
   },
   forfeited: {
     width: "12%",
-
     fontSize: 8,
   },
 });
 
-function InvoiceTableRow({ rowData }) {
+function InvoiceTableRow(props) {
   const tablerows =
-    rowData?.length > 0 &&
-    rowData?.map((item) => (
-      <View style={styles.row} key={item.id}>
+    props.rowData?.length > 0 &&
+    props.rowData?.map((item) => (
+      <View style={styles.row} key={item.name}>
         <Text style={styles.planName}>{item.name}</Text>
         <Text style={styles.grantInfo}>{item.username}</Text>
-        <Text style={styles.optionGranted}>{item.address.suite}</Text>
-        <Text style={styles.netvested}>{item.address.street}</Text>
-        <Text style={styles.unvested}>{item.address.zipcode}</Text>
-        <Text style={styles.cashedout}>{item.address.city}</Text>
-        <Text style={styles.exercised}>{item.phone}</Text>
+        <Text style={styles.optionGranted}>{item.username}</Text>
+        <Text style={styles.netvested}>{item.username}</Text>
+        <Text style={styles.unvested}>{item.username}</Text>
+        <Text style={styles.cashedout}>{item.username}</Text>
+        <Text style={styles.exercised}>{item.username}</Text>
         <Text style={styles.forfeited}>{item.id}</Text>
       </View>
     ));

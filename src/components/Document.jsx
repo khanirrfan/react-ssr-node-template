@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function TestDocument() {
+function TestDocument(props) {
   const [data, setData] = useState();
   const fetchData = () => {
     return axios
@@ -145,7 +145,7 @@ function TestDocument() {
             vulputate libero et velit interdum, ac aliquet odio mattis.
           </Text>
           <Text style={styles.title}>Asset Details</Text>
-          <AssetTable data={data} />
+          <AssetTable data={props.data} />
         </View>
       </Page>
     </Document>
